@@ -13,7 +13,7 @@ const Report = () => {
     }, []);
 
     const loadData = async () => {
-        const result = await axios.get("http://localhost:3030/report");
+        const result = await axios.get("http://admin-tch.herokuapp.com/report");
         setData(result.data.reverse());
     };
 

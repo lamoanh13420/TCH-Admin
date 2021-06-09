@@ -26,7 +26,7 @@ class AddAccount extends Component {
     onSubmit = (e) => {     
         const {history} = this.props
         e.preventDefault();
-        Axios.post('http://localhost:33456/api/admin/addAccount', {
+        Axios.post('http://admin-tch.herokuapp.com/api/admin/addAccount', {
             "username": this.state.username,
             "password": this.state.password,
             "role": this.state.role.title

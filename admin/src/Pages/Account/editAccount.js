@@ -11,7 +11,7 @@ const EditAccount = () => {
         loadAccount()
     }, [])
     const loadAccount = async () => {
-        const res = await Axios.get(`http://localhost:33456/api/admin/getIdAccount?id=${id}`)  
+        const res = await Axios.get(`http://admin-tch.herokuapp.com/api/admin/getIdAccount?id=${id}`)  
         setAccount({...account, username: res.data.TEN_TAIKHOAN, password: res.data.MATKHAU})   
         setRole({...role, selectedRole: res.data.ROLE_TAIKHOAN})      
     }
@@ -22,7 +22,7 @@ const EditAccount = () => {
         setRole({...role, selectedRole: e.target.value })
     }
     const onSubmit = () => {    
-        Axios.post(`http://localhost:33456/api/admin/updateAccount?id=${id}`, {
+        Axios.post(`https://admin-tch.herokuapp.com/api/admin/updateAccount?id=${id}`, {
             "username": account.username,
             "password": account.password,
             "role": role.selectedRole

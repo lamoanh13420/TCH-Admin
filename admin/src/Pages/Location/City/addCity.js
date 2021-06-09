@@ -13,7 +13,7 @@ export default class AddCity extends Component {
   }
 
   getCountryList = (() => {
-    Axios.get('http://localhost:33456/api/admin/getListCountry').then(
+    Axios.get('http://admin-tch.herokuapp.com/api/admin/getListCountry').then(
       (res) => {
         this.state.lstCountry = res.data;
         this.setState(this);
@@ -31,7 +31,7 @@ export default class AddCity extends Component {
   onSubmit = (e) => {
     const { history } = this.props
     e.preventDefault();
-    Axios.post('http://localhost:33456/api/admin/addCity', {
+    Axios.post('http://admin-tch.herokuapp.com//api/admin/addCity', {
       "cityName": this.state.cityName,
       "idCountry": this.state.idCountry.toString(),
     }).then((res) => {

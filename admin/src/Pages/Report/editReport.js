@@ -30,7 +30,7 @@ const EditReport = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`http://localhost:3030/report/${id}`, apartment);
+    await axios.put(`http://admin-tch.herokuapp.com/report/${id}`, apartment);
     history.push("/");
   };
 

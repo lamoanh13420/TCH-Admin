@@ -10,14 +10,14 @@ export default function EditCountry() {
         loadCountry()
     },[])
     const loadCountry = async () => {
-        const res = await Axios.get(`http://localhost:33456/api/admin/getIdCountry?id=${id}`)
+        const res = await Axios.get(`http://admin-tch.herokuapp.com/api/admin/getIdCountry?id=${id}`)
         setCountry({...country, countryName: res.data.TEN_QUOCGIA})
     }
     const changeCountry = (e) => {
         setCountry({...country, [e.target.name]: e.target.value})
     }
     const onSubmit = () => {
-        Axios.post(`http://localhost:33456/api/admin/updateCountry?id=${id}`, {
+        Axios.post(`http://admin-tch.herokuapp.com/api/admin/updateCountry?id=${id}`, {
             "countryName": country.countryName
         }).then((res) => {
             console.log(res.data)

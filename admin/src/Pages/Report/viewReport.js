@@ -15,7 +15,7 @@ const ApartmentView = () => {
         loadData();
     }, []);
     const loadData = async () => {
-        const res = await axios.get(`http://localhost:3030/report/${id}`);
+        const res = await axios.get(`http://admin-tch.herokuapp.com/report/${id}`);
         setData(res.data);
     };
     return (
