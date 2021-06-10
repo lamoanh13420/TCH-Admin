@@ -11,7 +11,7 @@ const EditAccount = () => {
         loadAccount()
     }, [])
     const loadAccount = async () => {
-        const res = await Axios.get(`http://admin-tch.herokuapp.com/api/admin/getIdAccount?id=${id}`)  
+        const res = await Axios.get(`https://thuecanho-admin.herokuapp.com/api/admin/getIdAccount?id=${id}`)  
         setAccount({...account, username: res.data.TEN_TAIKHOAN, password: res.data.MATKHAU})   
         setRole({...role, selectedRole: res.data.ROLE_TAIKHOAN})      
     }

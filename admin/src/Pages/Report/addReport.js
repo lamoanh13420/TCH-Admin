@@ -20,7 +20,7 @@ const AddReport = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.post("http://admin-tch.herokuapp.com/report", apartment);
+        await axios.post("https://thuecanho-admin.herokuapp.com/report", apartment);
         history.push("/");
     };
     return (

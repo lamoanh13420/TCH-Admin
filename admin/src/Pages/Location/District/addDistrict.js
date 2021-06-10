@@ -13,7 +13,7 @@ export default class AddDistrict extends Component {
   }
 
   getCityList = (() => {
-    Axios.get('http://admin-tch.herokuapp.com/api/admin/getListCity').then(
+    Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListCity').then(
       (res) => {
         this.state.lstCity = res.data;
         this.setState(this);
@@ -31,7 +31,7 @@ export default class AddDistrict extends Component {
   onSubmit = (e) => {
     const { history } = this.props
     e.preventDefault();
-    Axios.post('http://admin-tch.herokuapp.com/api/admin/addDistrict', {
+    Axios.post('https://thuecanho-admin.herokuapp.com/api/admin/addDistrict', {
       "districtName": this.state.districtName,
       "idCity": this.state.idCity.toString(),
     }).then((res) => {

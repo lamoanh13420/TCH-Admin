@@ -17,7 +17,7 @@ export default function AddCountry() {
     const onSubmit = (e) =>{
         e.preventDefault();          
         
-        Axios.post('http://admin-tch.herokuapp.com/api/admin/addCountry', {
+        Axios.post('https://thuecanho-admin.herokuapp.com/api/admin/addCountry', {
             "countryName": country.countryName
         }).then((res)=>{
             console.log(res.data)

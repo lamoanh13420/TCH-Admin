@@ -19,7 +19,7 @@ class Account extends Component {
         this.getList();
     }
     getList = (() => {
-        Axios.get('http://admin-tch.herokuapp.com/api/admin/getListAccount').then(
+        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListAccount').then(
             (res) => {
                 this.state.myList = res.data;
                 this.setState(this);
@@ -27,7 +27,7 @@ class Account extends Component {
         );
     })
     deleteUser = (idTK) => {
-        Axios.post('http://admin-tch.herokuapp.com/api/admin/deleteAccount', { id: idTK.toString() }).then(
+        Axios.post('https://thuecanho-admin.herokuapp.com/api/admin/deleteAccount', { id: idTK.toString() }).then(
             (res) => {
                 console.log(res.data);
                 alert("Delete Success!")

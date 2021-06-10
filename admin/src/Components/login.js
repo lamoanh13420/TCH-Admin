@@ -11,7 +11,7 @@ class Login extends Component {
     }
     confirmLogin = () => {
         const {history} = this.props;
-        Axios.post('http://localhost:33456/api/admin/signin', {
+        Axios.post('http://admin-tch.herokuapp.com/api/admin/signin', {
             "username": this.loginNameRef.current.value,
             "password": this.loginPWRef.current.value
         }).then((response) => {
